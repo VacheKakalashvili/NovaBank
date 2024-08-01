@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>NovaBank - Login/Register</title>
+</head>
+
+<body>
+    <div class="form-container" id="login-form">
+        <h2>Login</h2>
+        <input type="text" id="login-username" placeholder="Username" required>
+        <input type="password" id="login-password" placeholder="Password" required>
+        <button onclick="login()">Log In</button>
+        <p>Don't have an account yet? <button id="show-register">Create one</button></p>
+    </div>
+
+    <div class="form-container" id="register-form" style="display:none;">
+        <h2>Register</h2>
+        <input type="text" id="register-username" placeholder="Username" required>
+        <input type="email" id="register-email" placeholder="Email" required>
+        <input type="password" id="register-password" placeholder="Password" required>
+        <input type="password" id="register-confirm-password" placeholder="Confirm Password" required>
+        <button onclick="register()">Register</button>
+        <p>Already have an account? <button id="show-login">Log In</button></p>
+    </div>
+
+    <div class="dashboard" id="dashboard" style="display:none;">
+        <h2>Dashboard</h2>
+        <p>Welcome, <span id="user-name"></span></p>
+        <p>Balance: $<span id="balance"></span></p>
+        <div class="form-group">
+            <label for="amount">Amount:</label>
+            <input type="number" id="amount">
+        </div>
+        <button onclick="deposit()">Deposit</button>
+        <br>
+        <br>
+        <button onclick="withdraw()">Withdraw</button>
+        <div class="form-group">
+            <label for="recipient-username">Send to Username:</label>
+            <input type="text" id="recipient-username">
+        </div>
+        <div class="form-group">
+            <label for="transfer-amount">Transfer Amount:</label>
+            <input type="number" id="transfer-amount">
+        </div>
+        <button onclick="transfer()">Transfer</button>
+        <br>
+        <br>
+        <button onclick="logout()">Logout</button>
+        <br>
+        <h3>Transaction History</h3>
+        <ul id="transaction-history"></ul>
+        <button onclick="clearTransactionHistory()" class="clear-history-button">Clear Transaction History</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
